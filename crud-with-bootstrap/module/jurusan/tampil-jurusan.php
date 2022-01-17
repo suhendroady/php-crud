@@ -22,10 +22,11 @@ $result = mysqli_query($koneksi, $sql);
     </thead>
     <tbody>
         <?php
+        $no = 1;
         while ($jur = mysqli_fetch_array($result)) {
         ?>
             <tr>
-                <th scope="row">1</th>
+                <th scope="row"><?= $no; ?></th>
                 <td><?= $jur['nama_jurusan']; ?></td>
                 <td><?= $jur['singkatan']; ?></td>
                 <td>
@@ -34,6 +35,7 @@ $result = mysqli_query($koneksi, $sql);
                 </td>
             </tr>
         <?php
+            $no++;
         }
         ?>
 
